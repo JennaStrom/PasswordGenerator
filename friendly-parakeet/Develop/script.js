@@ -1,5 +1,5 @@
 // Assignment code here 
-var characterLength = 
+var characterLength = ;
 var choiceArr = []
 
 var specicalCharacterArray = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '<', '>', '?']
@@ -8,11 +8,25 @@ var lowercaseCharacterArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
 var uppercaseCharacterArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 function generatePassword() {
-  prompt("Please choose how many characters you want your password to be? Password should be between 8 and 128 characters.")
-  confirm("Please click the OK button if you want your password to include special characters.")
-  confirm("Please click the OK button if you want your password to include numeric characters.")
-  confirm("Please click the OK button if you want your password to include lowercase characters.")
-  confirm("Please click the OK button if you want your password to include uppercase characters.")
+  characterLength = parseInt(prompt("Please choose how many characters you want your password to be? Password should be between 8 and 128 characters."))
+
+  if (isNaN(characterLength) || characterLength < 7 || characterLength > 127) {
+    alert("The character length has to be a number between 8 - 128. Please try again.")
+    return false;
+}
+  if (confirm("Please click the OK button if you want your password to include special characters.")){
+    choiceArr = choiceArr.concat(specicalCharacterArray)
+  }
+  if (confirm("Please click the OK button if you want your password to include numeric characters.")) {
+    choiceArr = choiceArr.concat(numericCharacterArray)
+  }
+  if (confirm("Please click the OK button if you want your password to include lowercase characters.")){
+    choiceArr = choiceArr.concat(lowercaseCharacterArray)
+  }
+  if (confirm("Please click the OK button if you want your password to include uppercase characters.")){
+    choiceArr = choiceArr.concat(uppercaseCharacterArray)
+  }
+  return true
 }
 
 // Get references to the #generate element
