@@ -2,10 +2,10 @@
 var characterLength = []
 var choiceArr = []
 
-var specicalCharacterArray = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '<', '>', '?']
-var numericCharacterArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-var lowercaseCharacterArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-var uppercaseCharacterArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+var specicalCharacterArray = '!@#$%^&*()=+-_?><'.split ('')
+var numericCharacterArray = '1234567890'.split ('')
+var lowercaseCharacterArray = 'abcdefghijklmnopqrstuvwxyz'.split ('')
+var uppercaseCharacterArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split ('')
 
 function getPrompts() {
   choiceArr = []
@@ -53,7 +53,7 @@ function writePassword() {
     passwordText.value = password;
   }
   else {
-    passwordText.value = "something was entered wrong"
+    passwordText.value = "Something was entered wrong, please try again."
   }
 }
 
