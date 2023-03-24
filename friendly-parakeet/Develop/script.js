@@ -1,7 +1,7 @@
 // Assignment code here 
 var characterLength = []
 var choiceArr = []
-
+//arrays that hold the available characters for the password
 var specicalCharacterArray = '!@#$%^&*()=+-_?><'.split ('')
 var numericCharacterArray = '1234567890'.split ('')
 var lowercaseCharacterArray = 'abcdefghijklmnopqrstuvwxyz'.split ('')
@@ -10,7 +10,7 @@ var uppercaseCharacterArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split ('')
 function getPrompts() {
   choiceArr = []
   characterLength = parseInt(prompt("Please choose how many characters you want your password to be? Password should be between 8 and 128 characters."))
-
+//all the prompts and options you can choose for your password options
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("The character length has to be a number between 8 - 128. Please try again.")
     return false;
@@ -29,6 +29,7 @@ function getPrompts() {
   }
   return true
 }
+//for loop to generate the randomness
 function generatePassword() {
   var password = ""
   for (var i = 0; i < characterLength; i++) {
